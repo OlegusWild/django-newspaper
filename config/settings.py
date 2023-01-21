@@ -116,6 +116,16 @@ AUTH_PASSWORD_VALIDATORS = [
 # For sending emails by reseting passsword
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
+# TODO SendGrid restricted me ((
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# SMTP service settings (SendGrid)
+DEFAULT_FROM_EMAIL = 'katya.vakhrusheva.98@gmail.com'
+# EMAIL_HOST = 'smtp.sendgrid.net'
+# EMAIL_HOST_USER = 'apikey'
+# EMAIL_HOST_PASSWORD = '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'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
