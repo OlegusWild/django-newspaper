@@ -21,3 +21,22 @@ class Article(models.Model):
     # redirecting after creating a new instance (instructions where to go after it)
     def get_absolute_url(self):
         return reverse('article_detail', args=[str(self.pk)])
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=100)
+    article = models.ForeignKey(
+        Article,
+        on_delete=models.CASCADE,
+        related_name='comments'  # let us obtain ALL comments in templates related to a given article
+    )
+    author = models.ForeignKey(
+        get_user_model(),
+        on_delete=models.CASCADE
+    )
+    date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return self.comment
+
+    def get_absolute_url(self):
+        return reverse('article_list')
