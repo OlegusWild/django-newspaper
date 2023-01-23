@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')), # takes suburls from accounts.urls -> urlpatterns
     path('accounts/', include('django.contrib.auth.urls')), # login/logout urls
-    path('', include('pages.urls'))
+    path('', include('pages.urls')),
+    path('articles/', include('articles.urls'))
 ]

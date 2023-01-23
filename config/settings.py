@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'crispy_forms',
 
     'accounts',
-    'pages'
+    'pages',
+    'articles'
 ]
 
 MIDDLEWARE = [
@@ -131,7 +132,7 @@ DEFAULT_FROM_EMAIL = 'katya.vakhrusheva.98@gmail.com'
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 

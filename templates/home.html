@@ -3,7 +3,17 @@
 {% block title %} Home {% endblock title %}
 
 {% block content %}
-    {% if user.is_authenticated %}
+    <br/>
+    <div class="jumbotron">
+        <h1 class="display-4">Oleg's Newspaper</h1>
+        <p class="lead">This Newspaper website built with Django.</p>
+        <p class="lead">Hi, <em>{{ user.username }}</em>! {% if user.age %}You are {{ user.age }} years old.{% endif %}</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+                role="button">View All Articles</a>
+        </p>
+    </div>
+    <!-- {% if user.is_authenticated %}
         <p>Hi, <em>{{ user.username }}</em>! {% if user.age %}You are {{ user.age }} years old.{% endif %}</p>
         <p><a href="{% url 'logout' %}">Log Out</a></p>
     {% else %}
@@ -11,5 +21,5 @@
         <a href="{% url 'login' %}">Log In</a> | 
         <a href="{% url 'signup' %}">Sign Up</a>
 
-    {% endif %}
+    {% endif %} -->
 {% endblock content %}
