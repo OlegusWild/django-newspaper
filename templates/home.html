@@ -7,7 +7,7 @@
     <div class="jumbotron">
         <h1 class="display-4">Oleg's Newspaper</h1>
         <p class="lead">This Newspaper website built with Django.</p>
-        <p class="lead">Hi, <em>{{ user.username }}</em>! {% if user.age %}You are {{ user.age }} years old.{% endif %}</p>
+        <p class="lead">Hi, {% if user.is_authenticated %} <em>{{ user.username }}</em> {% else %}User{% endif %}! {% if user.age %}You are {{ user.age }} years old.{% endif %}</p>
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
                 role="button">View All Articles</a>
