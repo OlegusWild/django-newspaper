@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  app: 
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    image: news-paper-app-compose:version_1
+    container_name: newspaper_container_1
+    command: python manage.py runserver 0.0.0.0:8000

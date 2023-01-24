@@ -51,15 +51,13 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
     fields = ('comment',)
     template_name = 'comment_create.html'
 
-    # def get_context_data(self, **kwargs):
-    #     print(kwargs)
-    #     self.article_id = int(kwargs['id'])
 
     def form_valid(self, form: BaseModelForm) -> HttpResponse:
         form.instance.author = self.request.user  # setting user
 
-        request_path = self.request.path
-        article_id = int(COMMENT_CREATE_URL_PATTERN.findall(request_path)[0])
+        # request_path = self.request.path
+        # article_id = int(COMMENT_CREATE_URL_PATTERN.findall(request_path)[0])
+        article_id = int(self.kwargs['pk'])
        
         form.instance.article = Article.objects.get(id=article_id)  # setting linked article
         return super().form_valid(form)
